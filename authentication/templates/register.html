@@ -28,8 +28,16 @@
                     <h2 class="titulo">Seja bem vindo</h2>
                     <p class="sub-titulo">Crie sua conta</p>
                     <hr>
+                    {% if messages %}
+                    <br>
+                        {% for message in messages %}
+                            <div class="alert {{message.tags}}">
+                                {{message}}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                     
-                    <form action="{% url 'register' %}" method="POST">
+                    <form action="{% url 'register' %}" method="POST">{% csrf_token %}
                         <span class="bold">Nome de usuário</span>
                         <input class="form-control input-form" name="usuario" type="text" placeholder="Digite seu nome...">
                         <br>
