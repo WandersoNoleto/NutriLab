@@ -1,5 +1,5 @@
 """
-WSGI config for nutri_lab project.
+WSGI config for nutrily_app project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nutri_lab.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nutrily_app.settings')
 
 application = get_wsgi_application()
