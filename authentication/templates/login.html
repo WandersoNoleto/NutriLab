@@ -28,7 +28,7 @@
 
         </div>
 
-        <form class="form-container" method="POST">{% csrf_token %}
+        <form class="form-container" method="POST" action="{% url 'register' %}">{% csrf_token %}
             <div class="form-content">
                 <div class="label-form">
                     <label for="email">E-mail</label>

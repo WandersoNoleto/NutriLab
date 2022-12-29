@@ -15,9 +15,9 @@ def register(request):
         return render(request, 'register.html')
 
     elif request.method == "POST":
-         username = request.POST.get('usuario')
-         password = request.POST.get('senha')
-         confirm_password = request.POST.get('confirmar_senha')
+         username = request.POST.get('username')
+         password = request.POST.get('password')
+         confirm_password = request.POST.get('confirm_password')
          email    = request.POST.get('email')
 
          if not password_is_valid(request, password, confirm_password):
@@ -46,10 +46,10 @@ def login(request):
       return render(request, 'login.html')
 
     elif request.method == "POST":
-         username = request.POST.get('usuario')
-         password = request.POST.get('senha')
+         email = request.POST.get('email')
+         password = request.POST.get('passowrd')
 
-         user = auth.authenticate(username=username, password=password)
+         user = auth.authenticate(email=email, password=password)
 
          if not user:
             messages.add_message(request, constants.ERROR, 'Uusário ou senha inválidos')

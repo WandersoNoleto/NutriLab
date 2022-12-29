@@ -11,14 +11,7 @@
 {% block 'content' %}
 
 <div class="main-container">
-    {% if messages %}
-    <br>
-    {% for message in messages %}
-    <div class="alert {{message.tags}}">
-        {{message}}
-    </div>
-    {% endfor %}
-    {% endif %}
+
     <div class="logo-container">
         <div class="logo-content">
             <img class="svg" id="logo-icon" src="{% static 'global_svg/logo.svg' %}" alt="">
@@ -28,8 +21,16 @@
         </div>
         <span>Crie sua conta</span>
     </div>
+    {% if messages %}
+    <br>
+    {% for message in messages %}
+    <div class="alert {{message.tags}}">
+        {{message}}
+    </div>
+    {% endfor %}
+    {% endif %}
 
-    <div class="form-container">
+    <form class="form-container" method="POST" action="">{% csrf_token %}
         <div class="form-content">
             <div class="label-form">
                 <label for="username">Nome completo</label>
@@ -45,15 +46,15 @@
                     <input type="text" name="password" id="password">
                 </div>
                 <div class="label-form">
-                    <label for="confirm_passowrd">Confirmar senha</label>
-                    <input type="text" name="confirm_passowrd" id="confirm_passowrd">
+                    <label for="confirm_password">Confirmar senha</label>
+                    <input type="text" name="confirm_password" id="confirm_password">
                 </div>
             </div>
             <div class="btn-container">
                 <button type="submit">Cadastrar</button>
             </div>
         </div>
-    </div>
+    </form>
 
     <div class="main-footer">
         <span>Já possui cadastro? <a id="register-link" href="{% url 'login' %}">Acesse sua conta</a></span>
