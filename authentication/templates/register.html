@@ -3,74 +3,62 @@
 
 
 {% block 'head' %}
-    <link rel="stylesheet" href="{% static 'authentication/css/auth.css' %}">
+<link rel="stylesheet" href="{% static 'authentication/css/register.css' %}">
 {% endblock %}
 
 {% block 'title' %}Cadastre-se{% endblock %}
 
 {% block 'content' %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3 sidebar">
-                <div class="logo_sidebar">
-                    
-                    <h2 class="logo">
-                        <img class="img_logo_sidebar" src="">
-                    </h2>
 
-                </div>
-
-                
+<div class="main-container">
+    {% if messages %}
+    <br>
+    {% for message in messages %}
+    <div class="alert {{message.tags}}">
+        {{message}}
+    </div>
+    {% endfor %}
+    {% endif %}
+    <div class="logo-container">
+        <div class="logo-content">
+            <img class="svg" id="logo-icon" src="{% static 'global_svg/logo.svg' %}" alt="">
+            <div class="logo-text">
+                <span id="text-logo">Nutrily</span>
             </div>
-
-            <div class="col-md-9">
-                <div class="area_cadastrar">
-                    <h2 class="titulo">Seja bem vindo</h2>
-                    <p class="sub-titulo">Crie sua conta</p>
-                    <hr>
-                    {% if messages %}
-                    <br>
-                        {% for message in messages %}
-                            <div class="alert {{message.tags}}">
-                                {{message}}
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                    
-                    <form action="{% url 'register' %}" method="POST">{% csrf_token %}
-                        <span class="bold">Nome de usuário</span>
-                        <input class="form-control input-form" name="usuario" type="text" placeholder="Digite seu nome...">
-                        <br>
-                        <span class="bold">E-mail</span>
-                        <input class="form-control input-form" name="email" type="text" placeholder="Digite seu E-mail...">
-                        <br>
-                        <div class="row">
-                            <div class="col-md">
-                                <span class="bold">Senha</span>
-                                <input class="form-control input-form" name="senha" type="password" placeholder="Digite sua senha...">
-                            </div>
-
-                            <div class="col-md">
-                                <span class="bold">Confirmar senha</span>
-                                <input class="form-control input-form" name="confirmar_senha" type="password" placeholder="Confirme sua senha...">
-                            </div>
-                        </div>
-                        <br>
-                        <button class="btn-first">Registrar</button>
-
-                    </form>
-
-                    <h3 style="position: absolute; bottom: 65px; font-weight: bold">Já possui uma conta ?&nbsp <a href="{% url 'login' %}" class="btn btn-outline-success btn-lg">Logar</a> </h3>
-                </div>
-
-            </div>
-
         </div>
-
-
+        <span>Crie sua conta</span>
     </div>
 
+    <div class="form-container">
+        <div class="form-content">
+            <div class="label-form">
+                <label for="username">Nome completo</label>
+                <input type="text" name="username" id="username">
+            </div>
+            <div class="label-form">
+                <label for="email">E-mail</label>
+                <input type="text" name="email" id="email">
+            </div>
+            <div class="password-label-box">
+                <div class="label-form">
+                    <label for="password">Senha</label>
+                    <input type="text" name="password" id="password">
+                </div>
+                <div class="label-form">
+                    <label for="confirm_passowrd">Confirmar senha</label>
+                    <input type="text" name="confirm_passowrd" id="confirm_passowrd">
+                </div>
+            </div>
+            <div class="btn-container">
+                <button type="submit">Cadastrar</button>
+            </div>
+        </div>
+    </div>
 
-
+    <div class="main-footer">
+        <span>Já possui cadastro? <a id="register-link" href="{% url 'login' %}">Acesse sua conta</a></span>
+    </div>
+</div>
+</body>
 
 {% endblock %}

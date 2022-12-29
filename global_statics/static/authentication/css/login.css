@@ -1,18 +1,8 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    background: #87d6b538;
-    color: #3a3939;
-}
 
 .main-container{
     margin: 0 auto;
-    margin-top: 4rem;
-    height: 33rem;
+    margin-top: 5rem;
+    height: 30rem;
     width: 37.5rem;
 
     border-radius: 1rem;
@@ -51,12 +41,12 @@ body{
 }
 
 .form-container{
-    height: 65%;
+    height: 60%;
 }
 
 .form-content{
     margin: 0 auto;
-    width: 80%;
+    width: 60%;
     height: 100%;
 }
 
@@ -83,10 +73,6 @@ body{
     border:none;	
     outline:none;
     border-bottom:1px solid #059b5c;
-}
-
-.password-label-box{
-    display: flex;
 }
 
 .btn-container{
