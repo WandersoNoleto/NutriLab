@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #87d6b538;
+    color: rgb(58, 57, 57);
+}
+
+.main-container{
+    margin: 0 auto;
+    margin-top: 7rem;
+    height: 30rem;
+    width: 37.5rem;
+
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    background-color: white;
+}
+
+.logo-container{
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo-container span{
+    color: #6b6767;
+}
+
+.logo-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#text-logo{
+    font-family: 'Unbounded', cursive;
+    font-size: 2rem;
+    color: #358563;
+}
+
+#logo-icon{
+    width: 3.3rem;
+    height: 3.3rem;
+}
+
+.form-container{
+    height: 60%;
+}
+
+.form-content{
+    margin: 0 auto;
+    width: 60%;
+    height: 100%;
+}
+
+.label-form{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.label-form label{
+    font-size: 1.25rem;
+}
+
+.label-form input{
+    border: none;
+    border-bottom: 1px solid #04804c;
+    background: transparent;
+
+    font-size: 1rem;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.label-form input:focus{
+    border:none;	
+    outline:none;
+    border-bottom:1px solid #059b5c;
+}
+
+.btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.btn-container button{
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    border: none;
+    background-color: #358563;
+    color: #fff;
+}
+
+.btn-container button:hover{
+    cursor: pointer;
+    background-color: #04804c;
+    transition: all 0.5s;
+}
+
+.main-footer{
+    display: flex;
+    justify-content: center;
+}
+
+#register-link{
+    text-decoration: none;
+    color: #07b153;
+}
+
+#register-link:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
