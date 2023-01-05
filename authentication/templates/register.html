@@ -21,15 +21,6 @@
         </div>
         <span>Crie sua conta</span>
     </div>
-    {% if messages %}
-    <br>
-    {% for message in messages %}
-    <div class="alert {{message.tags}}">
-        {{message}}
-    </div>
-    {% endfor %}
-    {% endif %}
-
     <form class="form-container" method="POST" action="">{% csrf_token %}
         <div class="form-content">
             <div class="label-form">
@@ -55,6 +46,13 @@
             </div>
         </div>
     </form>
+
+    <script>
+            {% for message in messages %}
+                alertify.set('notifier','position', 'top-right');
+                alertify.success('{{message}}');
+            {% endfor %}
+    </script>
 
     <div class="main-footer">
         <span>Já possui cadastro? <a id="register-link" href="{% url 'login' %}">Acesse sua conta</a></span>
